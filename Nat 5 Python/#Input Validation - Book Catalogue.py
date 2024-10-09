@@ -6,6 +6,6 @@ print("""
       2. View Catalog
       3. Search Books
       4. Exit""")
-options = int(input("Please answer one of the options above!! I'm begging you PLEASE BRO: "))
+options = int(input("Please answer one of the options above!! I'm begging you PLEASE: "))
 while options <1 or options >4 :
-    options = int(input("ERROR!!!!!!!!!!Please answer one of the options above!! I'm begging you PLEASE BRO: "))
+    options = int(input("ERROR!!!!!!!!!!Please answer one of the options above!! I'm begging you PLEASE: "))
