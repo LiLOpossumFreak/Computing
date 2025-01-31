@@ -28,7 +28,7 @@ for stations in range (numStations) :
 station = 0
 for index in range (numStations) :
     totalCost = totalCost + Journey_Stage_Costs[index]
-    stations = stations +1
+    station = station +1
     print("The cost for charging station",station,"is £",round(Journey_Stage_Costs[index],2))
 
 #Display total miles and total cost
