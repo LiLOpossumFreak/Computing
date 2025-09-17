@@ -23,7 +23,7 @@ else:
 averageFoodWeight = totalFoodWeight / 5
 
 container = 0
-for weights in range (5):
+for index in range (5):
     container = container+ 1
     print("The weight of food in container ",container,"is",foodWeights[index]," grams.")
 
