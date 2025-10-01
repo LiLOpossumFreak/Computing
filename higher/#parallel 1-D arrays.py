@@ -14,18 +14,18 @@ def get_name():
     return CurrentName
 
 def get_test_mark():
-    CurrentMark = input("Enter your mark: ")
+    CurrentMark = int(input("Enter your mark: "))
     while CurrentMark < 1 or CurrentMark > 100:
         print("ERROR!!!!!!!!!!!!!")
-        CurrentMark = input("Enter your mark: ")
+        CurrentMark = int(input("Enter your mark: "))
     return CurrentMark
 
 def display_all(name,test_mark):
-    print()
+    print(name[index] + "scored" + str(test_mark[index]))
 
 
 #get array items
 for index in range(5):
     name.append(get_name())
-    name.append(get_test_mark())
+    test_mark.append(get_test_mark())
 display_all(name,test_mark)
