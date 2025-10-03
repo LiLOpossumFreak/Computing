@@ -1,5 +1,5 @@
 # 801. Records and Array of Records
-# Example 2 - An array of records - Predict and Read
+# Task 2 - An array of records - Predict and Read
 
 from dataclasses import dataclass
 @dataclass
