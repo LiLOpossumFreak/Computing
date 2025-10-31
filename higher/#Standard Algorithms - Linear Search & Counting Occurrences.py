@@ -1,4 +1,4 @@
-#Standard Algorithms - Linear Search & Counting Occurrences
+#Standard Algorithms - Linear Search & Counting Occurrences - Part 1
 
 #Task 1
 ownsAnIphone = ["Yes","No","No","No","Yes","Yes","Yes","Yes"]
