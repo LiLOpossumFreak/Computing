@@ -28,8 +28,7 @@ def findCharacterPosition(oneToFind):
 
 characters = getCharacters()
 target = getTargetCharacter()
-foundPosition = findCharacterPosition(target)
-found = findCharacterPosition(target)
+foundPosition, found = findCharacterPosition(target)
 if found == True:
   print(target," was found at position ",foundPosition)
 else:
