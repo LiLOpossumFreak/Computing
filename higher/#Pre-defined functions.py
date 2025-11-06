@@ -5,5 +5,5 @@ password = input("Please enter your password: ")
 chars = list(password)
 for index in range(len(chars)):
     remainder = ord(chars[index]) - ord(chars[index])%11
-NewPassword = remainder + password
+NewPassword = str(remainder) + password
 print(NewPassword)
