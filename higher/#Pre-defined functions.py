@@ -24,3 +24,15 @@ characters[0] = str(characters[0]).upper()
 for index in range(len(characters)):
     NewAnimal = NewAnimal + str(characters[index])
 print(NewAnimal)
+
+
+print()
+
+#Task 3
+password = input("Please enter your password: ")
+chars = list(password)
+while chars[0] != str(chars[0]).upper():
+    password = str(input("FIRST CHARACTER MUST BE A CAPITAL. Please re-enter your password: "))
+while ord(chars[len(chars)]) < 35 or ord(chars[len(chars)]) > 37:
+    password = str(input("LAST CHARACTER MUST BE EITHER #, $ OR %. Please re-enter your password: "))
+print(password)
