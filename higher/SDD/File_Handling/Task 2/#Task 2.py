@@ -1,10 +1,10 @@
-#Task 2
+#Task 3
 
 items = []
 names = []
 marks = []
 
-with open("higher/SDD/File_Handling/pupils.txt") as readfile:
+with open("higher/SDD/File_Handling/Task 2/pupils.txt") as readfile:
     line = readfile.readline().rstrip('\n')
     while line:
         items = line.split(",")
