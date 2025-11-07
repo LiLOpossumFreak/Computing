@@ -4,7 +4,7 @@ items = []
 names = []
 marks = []
 
-with open("pupils.txt") as readfile:
+with open("higher/SDD/File_Handling/pupils.txt") as readfile:
     line = readfile.readline().rstrip('\n')
     while line:
         items = line.split(",")
@@ -13,4 +13,4 @@ with open("pupils.txt") as readfile:
         line = readfile.readline().rstrip('\n')
 
 for index in range(len(names)):
-    print(names[index]," - ",marks[index],)
+    print(names[index],"-",marks[index],)
