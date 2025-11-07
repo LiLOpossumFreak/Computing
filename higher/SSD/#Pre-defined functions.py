@@ -32,9 +32,15 @@ print()
 def isPasswordSecure():
     password = input("Please enter your password: ")
     chars = list(password)
-    while (ord(chars[len(chars)-1]) < 35 or ord(chars[len(chars)-1]) > 37) and chars[0] != str(chars[0]).upper() :
+    test1 = (ord(chars[len(chars)-1]) < 35 or ord(chars[len(chars)-1]) > 37) # true / false
+    test2 = chars[0] != str(chars[0]).upper() # true / false
+    print(test1, test2) # to show what the program is doing
+    while test1 or test2:
         password = str(input("FIRST CHARACTER MUST BE A CAPITAL AND LAST MUST BE EITHER #, $ or %. Please re-enter your password: "))
         chars = list(password)
+        test1 = (ord(chars[len(chars)-1]) < 35 or ord(chars[len(chars)-1]) > 37) # true / false
+        test2 = chars[0] != str(chars[0]).upper() # true / false
+        print(test1, test2)
     return password
 
 # --------- Main Program ---------
