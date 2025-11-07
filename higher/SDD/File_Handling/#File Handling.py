@@ -1,4 +1,4 @@
-#File Handling
+#File Handling (Mr Simpson's example program)
 
 #-------------Main Program-----------------
 #open file
