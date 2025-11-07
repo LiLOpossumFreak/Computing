@@ -8,7 +8,7 @@ characters = list(password)
 for index in range(len(characters)):
     value = value + ord(characters[index])
 remainder = value%11
-NewPassword = str(remainder) + password
+NewPassword = password + str(remainder)
 #print so I can see if the code is working
 print(NewPassword)
 
