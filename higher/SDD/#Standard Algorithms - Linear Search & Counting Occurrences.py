@@ -7,7 +7,7 @@ numIphones = "Yes"
 
 for index in range(len(ownsAnIphone)):
     if numIphones == ownsAnIphone[index]:
-        counter = counter * 1
+        counter = counter + 1
 print(counter,"people own iPhones.")
 
 
