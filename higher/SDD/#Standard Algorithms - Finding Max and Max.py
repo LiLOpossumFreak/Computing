@@ -4,7 +4,7 @@
 runner_name = ["AS","CM","ZN","OR","FP"]
 runner_num = [2191,1789,1046,3391,2192]
 runner_time = [49.18,51.36,42.58,58.59,64.03]
-money_raised = [312.50,240.75,210.00,278.90,180.00]
+money_raised = [312.50,240.75,210.00,278.90,180.00
 
 def displayNumbers (numbers):
   for x in range(len(numbers)):
