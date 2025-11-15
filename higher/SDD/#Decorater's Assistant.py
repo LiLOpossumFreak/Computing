@@ -3,7 +3,7 @@
 #subroutines
 def get_user_inputs():
     l = int(input("enter length in m: "))
-    b = int(input("enter breadth in m: "))
+    b = str(input("enter breadth in m: "))
     h = int(input("enter height in m: "))
     return l, b, h
 
