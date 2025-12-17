@@ -1,5 +1,18 @@
+nav {
+    background-color: #C0C5CC;
+}
+
 nav ul li{
     float: left;
-    width: 100px; 
-    text-align: center;
+    width: 75px; 
+    text-align: left;
 }
+
+nav ul li a:hover {
+    color:red
+}
+
+
+ul {
+    list-style-type:none;
+} 
