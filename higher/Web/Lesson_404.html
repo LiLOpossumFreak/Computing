@@ -8,7 +8,7 @@
         }
     </style>
   </head>
-  
+
   <body>
     <form action="/answers.txt" method="post">
     Enter your first name: <span>*</span><br>
@@ -18,13 +18,13 @@
         <input required type="text" name="lastName" size="20"><br>
     
     Enter your age: <span>*</span><br>
-        <input required type="number" name="age" size="3"><br>
+        <input required type="number" min="8" max="16" pattern="\d+" name="age" size="3"><br>
     
     Enter your parent/guardian's email: <span>*</span><br>
         <input required type="email" name="email" size="25"><br>
     
     Enter your parent/guardian's phone number: <span>*</span><br>
-        <input required type="text" name="phoneNumber" size="13"><br>
+        <input required type="text" pattern="[0-9]{4} [0-9]{3} [0-9]{4}" name="phoneNumber" size="13"><br>
     
     Enter your T-shirt size: <br>
         <select name="size">
