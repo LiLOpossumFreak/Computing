@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+  </head>
+  <body>
+
+    <form action="/answers.txt" method="post">
+        <input type="radio" name="Q1" value="Dundee">1. Dundee <br>
+        <input type="radio" name="Q1" value="Edinburgh">2. Edinburgh <br>
+        <input type="radio" name="Q1" value="Glasgow">3. Glasgow <br>
+        <input type="radio" name="Q1" value="Aberdeen">4. Aberdeen <br>
+    </form>
+  </body>
+</html>  
