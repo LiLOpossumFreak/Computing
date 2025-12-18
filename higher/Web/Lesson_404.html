@@ -2,14 +2,46 @@
 <html>
   <head>
     <title>Form</title>
+    <style>
+        span{
+            color: #FF0000 ;
+        }
+    </style>
   </head>
+  
   <body>
-
     <form action="/answers.txt" method="post">
-        <input type="radio" name="Q1" value="Dundee">1. Dundee <br>
-        <input type="radio" name="Q1" value="Edinburgh">2. Edinburgh <br>
-        <input type="radio" name="Q1" value="Glasgow">3. Glasgow <br>
-        <input type="radio" name="Q1" value="Aberdeen">4. Aberdeen <br>
+    Enter your first name: <span>*</span><br>
+        <input required type="text" name="firstName" size="20"><br>
+    
+    Enter your last name: <span>*</span><br>
+        <input required type="text" name="lastName" size="20"><br>
+    
+    Enter your age: <span>*</span><br>
+        <input required type="number" name="age" size="3"><br>
+    
+    Enter your parent/guardian's email: <span>*</span><br>
+        <input required type="email" name="email" size="25"><br>
+    
+    Enter your parent/guardian's phone number: <span>*</span><br>
+        <input required type="text" name="phoneNumber" size="13"><br>
+    
+    Enter your T-shirt size: <br>
+        <select name="size">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select><br>
+    
+    What pervious football experience do you have?: <br>
+        <input type="radio" name="experience" value="None">None <br>
+        <input type="radio" name="experience" value="1-2years">1-2 years <br>
+        <input type="radio" name="experience" value="3+years">3+ years <br>
+        <br>
+    
+        <input type="submit" onClick="alert('Form Entered')" value="submit">
     </form>
   </body>
 </html>  
