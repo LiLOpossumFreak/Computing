@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>N5 - WDD - Lesson 9 Example</title>
+    <style>
+      header{
+        background-color: gray;
+        color: white;
+      }
+      section {
+        background-color: lightgray;
+        width: 400px;
+        height: 400px;
+        display: inline;
+      }
+      body {
+        display: inline;
+      }
+    </style>
+    <script>
+      function mouseClickHornet() {
+        section.hornet.getElementById("Hornet").visibility = visible;
+        section.lace.getElementById("Lace").visibility = hidden;
+        section.shakra.getElementById("Shakra").visibility = hidden;
+      }
+      function mouseClickLace() {
+        section.hornet.getElementById("Hornet").visibility = hidden;
+        section.lace.getElementById("Lace").visibility = visible;
+        section.shakra.getElementById("Shakra").visibility = hidden;
+      }
+      function mouseClickShakra() {
+        section.hornet.getElementById("Hornet").visibility = hidden;
+        section.lace.getElementById("Lace").visibility = hidden;
+        section.shakra.getElementById("Shakra").visibility = visible;
+      }
+    </script>
+ </head>
+
+  <body>
+    <header style="display:block">
+      <h1>I'm obsessed with Silksong rn and I'm making it your problem :)</h1>
+    </header>
+    </br>
+    <section class="hornet" style="float:left;">
+      <h2>Hornet</h2>
+      <img src="https://static.wikia.nocookie.net/hollowknight/images/1/16/Hornet_Idle.png/revision/latest?cb=20251030203109" style="width:200px; height:100px" onclick="mouseClickHornet()">
+      <p id="Hornet">
+        Hornet is the daughter of The Pale King and Hera, <br>
+        thus making her half wyrm and half  weaver. In Silksong she is <br>
+        captured upon Grand Mother Silk's request and taken to Pharloom due to her ability to produce silk. <br>
+      </p>
+    </section>
+
+    <section class="lace">
+      <h1>Lace</h1>
+      <img src="https://cdn.wikimg.net/en/hkwiki/images/e/e6/B_Lace.png" style="width:200px; height:100px" onclick="mouseClickLace()">
+      <p id="Lace">
+        Lace is the daughter of Grand Mother Silk. <br>
+        She is entirely made of silk unlike most other bugs in <br>
+        the Silksong/Hollow Knight universe. She was created by <br>
+        Grand Mother Silk to be loyal to GMS and wake her from the <br>
+        deep sleep the weavers put her in. However she grows to <br>
+        resent her mother and later and, if you trap GMS in the <br>
+        Snail Shamans' snare, she goes on to betray her in order to <br>
+        save Hornet from being dragged into the void with GMS 
+      </p>
+    </section>
+
+    <section class="shakra" style="float:right;">
+      <h1>Shakra</h1>
+      <img src="https://static.wikia.nocookie.net/hollowknight/images/0/0e/Shakra_Ferma.png/revision/latest/scale-to-width/360?cb=20251028123927&path-prefix=it" style="width:200px; height:100px" onclick="mouseClickShakra()">
+      <p id="Shakra">She makes maps :D</p>
+    </section>
+  </body>
+</html>
