@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>N5 - WDD - Lesson 9 Example</title>
+    <script>
+      function mouseOver() {
+        document.getElementById("demo").style.color = "red";
+      }
+      function mouseOut() {
+        document.getElementById("demo").style.color = "black";
+      }
+      function mouseClick() {
+        document.getElementById("demo").style.color = "green";
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <h1 id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()" onmouseclick="mouseClick()">Welcome</h1>
+  </body>
+</html>
