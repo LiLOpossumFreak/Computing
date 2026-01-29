@@ -18,7 +18,7 @@ orders = [order() for index in range(505)]
 
 def ReadIntoArray():
     index = 0
-    with open("orders.txt","r") as OrdersFile:
+    with open("higher/SDD/Assignment_2025/orders.txt","r") as OrdersFile:
         #reads the current line
         currentLine = OrdersFile.readline().strip('\n')
         #ensures the program will stop reading from the file once it reaches an empty line
