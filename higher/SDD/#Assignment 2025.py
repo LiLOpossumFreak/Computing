@@ -14,7 +14,8 @@ class order():
 orders = [order() for index in range(505)]
 
 
-#Subroutines
+#-----------------Subroutines-----------------------------------------------------
+
 def ReadIntoArray():
     index = 0
     with open("orders.txt","r") as OrdersFile:
@@ -52,17 +53,31 @@ def FindPosition(orders):
 
 def WriteCustomerDetails(orders, position):
     with open("winningCustomer.txt","w") as winningCustomerFile:
+        #Writes the winning order nu,ber, email and cost to winningCustomer.txt if there's a winning customer
         if position <= 0:
-            winningCustomerFile.write()
+            winningCustomerFile.write(orders[position].orderNum,",",orders[position].email,", ",orders[position].cost)
+        #Writes 'No winner' to winningCustomer.txt if there is no winning customer
         else:
-            winningCustomerFile.write()
+            winningCustomerFile.write("No winner")
     pass
 
 def DisplayOrders(orders):
+    #Initalise variables
+    collectionCount = 0
+    deliveryCount = 0
+    #Searches orders and counts the number of orders delivered and the number of orders collected
+    for index in range(len(orders)):
+        if orders[index].option == "Delivery":
+            deliveryCount = deliveryCount + 1
+        else:
+            collectionCount = collectionCount + 1
+    #Displays the number of orders delivered and the number of orders collected
+    print("There were",deliveryCount,"delivered, and there were",collectionCount,"collected.")
     pass
 
 
-#main program
+#---------------------main program--------------------------------
+
 orders = ReadIntoArray()
 position = FindPosition(orders)
 WriteCustomerDetails(orders, position)
