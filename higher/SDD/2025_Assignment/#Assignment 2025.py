@@ -1,5 +1,5 @@
 #Assignment 2025
-
+filename = "\\albyn-sch\data\PupilHome\p.weatherley\Downloads\Computing\higher\SDD\2025_Assignment\orders.txt"
 #Setting up 1 order record
 from dataclasses import dataclass
 @dataclass
@@ -16,9 +16,9 @@ orders = [order() for index in range(505)]
 
 #-----------------Subroutines-----------------------------------------------------
 
-def ReadIntoArray():
+def ReadIntoArray(filename):
     index = 0
-    with open("higher/SDD/Assignment_2025/orders.txt","r") as OrdersFile:
+    with open(filename,"r") as OrdersFile:
         #reads the current line
         currentLine = OrdersFile.readline().strip('\n')
         #ensures the program will stop reading from the file once it reaches an empty line
@@ -78,7 +78,7 @@ def DisplayOrders(orders):
 
 #---------------------main program--------------------------------
 
-orders = ReadIntoArray()
+orders = ReadIntoArray(filename)
 position = FindPosition(orders)
 WriteCustomerDetails(orders, position)
 DisplayOrders(orders)
