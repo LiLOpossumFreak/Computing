@@ -1,22 +1,24 @@
 #Assignment 2025
-filename = "\\albyn-sch\data\PupilHome\p.weatherley\Downloads\Computing\higher\SDD\2025_Assignment\orders.txt"
+filename = "SDD/2025_Assignment/orders.txt"
+writeFilename = "SDD/2025_Assignment/winningCustomer.txt"
 #Setting up 1 order record
 from dataclasses import dataclass
 @dataclass
-class order():
-    orderNum : int = 0
+class order():  
+    orderNum : str = 0
     date : str = ""
     email : str = ""
     option : str = ""
-    cost : int = 0
+    cost : float = 0
     rating : int = 0
-#sets up an array of 505 orders records
-orders = [order() for index in range(505)]
 
 
 #-----------------Subroutines-----------------------------------------------------
 
-def ReadIntoArray(filename):
+def ReadIntoArray():
+    #sets up an array of 505 orders records
+    orders = [order() for index in range(505)]
+    CurrentItems = []
     index = 0
     with open(filename,"r") as OrdersFile:
         #reads the current line
@@ -31,9 +33,12 @@ def ReadIntoArray(filename):
             orders[index].email = CurrentItems[2]
             orders[index].option = CurrentItems[3]
             orders[index].cost = CurrentItems[4]
-            orders[index].rating = CurrentItems[5]
+            orders[index].rating = int(CurrentItems[5])
             index = index + 1
+            # read next line
+            currentLine = OrdersFile.readline().strip('\n') 
     return orders
+
 
 def FindPosition(orders):
     #initalising variables
@@ -41,44 +46,49 @@ def FindPosition(orders):
     index = 0
     month = str(input("Enter the month you want to search for: "))
     while position == -1 and index < len(orders):
-        #splits the date at the current index into multiple items in an array
-        Date = orders[index].date.split("-")
-        #sets monthIndex to the month for the current index
-        monthIndex = Date[1]
+        #sets monthIndex to the month in the date at the specific index
+        monthIndex = orders[index].date[3:6]
         #if the month entered is found in the array, and the rating is 5, the position is recorded and the subroutine ends
         if monthIndex == month and orders[index].rating == 5:
             position = index
         index = index + 1
     return position
 
+
 def WriteCustomerDetails(orders, position):
-    with open("winningCustomer.txt","w") as winningCustomerFile:
-        #Writes the winning order nu,ber, email and cost to winningCustomer.txt if there's a winning customer
-        if position <= 0:
-            winningCustomerFile.write(orders[position].orderNum,",",orders[position].email,", ",orders[position].cost)
-        #Writes 'No winner' to winningCustomer.txt if there is no winning customer
-        else:
+    with open(writeFilename,"w") as winningCustomerFile:
+        if position == -1:
+            #Writes 'No winner' to winningCustomer.txt if there is no winning customer
             winningCustomerFile.write("No winner")
+            print("No Winner")
+        else:
+            #Writes the winning order number, email and cost to winningCustomer.txt if there's a winning customer
+            winningCustomerFile.write(orders[position].orderNum+","+orders[position].email+", "+str(orders[position].cost))
+            print("yeswinner")
     pass
 
-def DisplayOrders(orders):
-    #Initalise variables
-    collectionCount = 0
-    deliveryCount = 0
-    #Searches orders and counts the number of orders delivered and the number of orders collected
+
+def countOption(orders,CurrentOption):
+    #set counter to 0
+    counter = 0
+    #Searches orders and counts the number of orders which match the current option
     for index in range(len(orders)):
-        if orders[index].option == "Delivery":
-            deliveryCount = deliveryCount + 1
-        else:
-            collectionCount = collectionCount + 1
+        if orders[index].option == CurrentOption:
+            counter = counter + 1
+    return counter
+
+
+def DisplayOrders(orders):
+    noDelivered = countOption(orders,"Delivery")
+    noCollected = countOption(orders,"Collection")
     #Displays the number of orders delivered and the number of orders collected
-    print("There were",deliveryCount,"delivered, and there were",collectionCount,"collected.")
+    print("There were "+str(noDelivered)+" delivered, and there were "+str(noCollected)+" collected.")
     pass
 
 
 #---------------------main program--------------------------------
 
-orders = ReadIntoArray(filename)
+orders = ReadIntoArray()
 position = FindPosition(orders)
 WriteCustomerDetails(orders, position)
 DisplayOrders(orders)
