@@ -1,4 +1,4 @@
-rom dataclasses import dataclass
+from dataclasses import dataclass
 
 @dataclass
 class square():
@@ -8,17 +8,13 @@ class square():
 
 gameboard = [square() for index in range(50)]
 
-from random import
-SquaresToMove = randrange(1,6)
+import random
 
 #------------ Subroutines ---------------------
 
 def InputPlayerColour(gameboard):
       gameboard[0].player = str(input("enter P1's colour -either red, blue, green or yellow: "))
-      if gameboard[0].player != "red" or gameboard[0].player != "blue":
-            print("ERROR YOU STUPID IDIOT INVALID COLOUR!!!!!!!!!! >:((")
-            gameboard[0].player = str(input("enter P1's colour -either red, blue, green or yellow: "))
-      if gameboard[0].player != "green" or gameboard[0].player != "yellow":
+      while gameboard[0].player != "red" and gameboard[0].player != "blue" and gameboard[0].player != "green" and gameboard[0].player != "yellow":
             print("ERROR YOU STUPID IDIOT INVALID COLOUR!!!!!!!!!! >:((")
             gameboard[0].player = str(input("enter P1's colour -either red, blue, green or yellow: "))
     
@@ -30,7 +26,7 @@ def InputPlayerColour(gameboard):
 
 def displayBoard(gameboard):
     for row in range(len(gameboard)):
-        print(str(gameboard[row][col].position) + ', ')
+        print(str(gameboard[row].position) + ', ',end='')
     print()
 
 
@@ -74,35 +70,22 @@ def AssignPointer(gameboard):
     return gameboard
 
 
-def MOVE(gameboard, SquaresToMove):
-    for index in range(len(gameboard)):
-	    NewSquare = index + SquaresToMove
-           if gameboard[index].player = “red”:
-           if NewSquare < 49:
-			    gameboard[NewSquare].player = “red”
-			    gameboard[index].player = “empty”
-
-	    if gameboard[index].player = “green”
-		    if NewSquare < 49:
-			    gameboard[NewSquare].player = “green”
-			    gameboard[index].player = “empty”
-
-	    if gameboard[index].player = “yellow”
-		    if NewSquare < 49:
-			    gameboard[NewSquare].player = “yellow”
-			    gameboard[index].player = “empty”
-
-	    if gameboard[index].player = “blue”
-		    if NewSquare < 49:
-			    gameboard[NewSquare].player = “blue”
-			    gameboard[index].player = “empty”
+def MOVE(gameboard):
+    playerColour = gameboard[0].player
+    SquaresToMove = random.randint(1,6)
+    NewSquare = SquaresToMove
+    while NewSquare < 50:
+        for index in range(len(gameboard)):
+            gameboard[index].player = 'empty'
+        gameboard[NewSquare].player ==  playerColour
+        SquaresToMove = random.randint(1,6)
+        NewSquare = NewSquare + SquaresToMove
     return gameboard
 
 #------------ Main Program -------------------------------------
 
 gameboard = InputPlayerColour(gameboard)
-displayBoard(gameboard)
 gameboard = initPosition(gameboard)
 displayBoard(gameboard)
 gameboard = AssignPointer(gameboard)
-gameboard = MOVE(gameboard, SquaresToMove)
+gameboard = MOVE(gameboard)
