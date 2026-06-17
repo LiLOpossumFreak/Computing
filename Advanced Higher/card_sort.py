@@ -35,14 +35,14 @@ def display_cards(cardarray):
         output = output + " : " + str(cardarray[index].value)
         print(output)
 
-def sort_cards(cards):
+def sort_cards(cardarray):
     for index in range(len(cardarray)):
         min = cardarray[0].value
         if cardarray[index].value < min:
             cardarray[0].value = cardarray[index].value
             cardarray[index].value =min
             min = cardarray[index].value
-    return cards
+    return cardarray
 
 # main program
 cards = [card() for index in range(10)]
@@ -52,4 +52,5 @@ cards = draw_cards(allcards)
 
 display_cards(cards)
 cards = sort_cards(cards)
+print()
 display_cards(cards)
