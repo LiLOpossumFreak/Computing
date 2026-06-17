@@ -13,10 +13,10 @@ import random
 #------------ Subroutines ---------------------
 
 def InputPlayerColour(gameboard):
-      gameboard[0].player = str(input("enter P1's colour -either red, blue, green or yellow: "))
+      gameboard[0].player = str(input("enter P1's colour - either red, blue, green or yellow: "))
       while gameboard[0].player != "red" and gameboard[0].player != "blue" and gameboard[0].player != "green" and gameboard[0].player != "yellow":
             print("ERROR YOU STUPID IDIOT INVALID COLOUR!!!!!!!!!! >:((")
-            gameboard[0].player = str(input("enter P1's colour -either red, blue, green or yellow: "))
+            gameboard[0].player = str(input("enter P1's colour - either red, blue, green or yellow: "))
     
       index = 1
       for index in range(49):
