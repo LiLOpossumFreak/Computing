@@ -13,16 +13,17 @@ import random
 #------------ Subroutines ---------------------
 
 def InputPlayerColour(gameboard):
-      gameboard[0].player = str(input("enter P1's colour - either red, blue, green or yellow: "))
-      while gameboard[0].player != "red" and gameboard[0].player != "blue" and gameboard[0].player != "green" and gameboard[0].player != "yellow":
+      playerColour = str(input("enter P1's colour - either red, blue, green or yellow: "))
+      while playerColour != "red" and playerColour != "blue" and playerColour != "green" and playerColour != "yellow":
             print("ERROR YOU STUPID IDIOT INVALID COLOUR!!!!!!!!!! >:((")
-            gameboard[0].player = str(input("enter P1's colour - either red, blue, green or yellow: "))
+            playerColour = str(input("enter P1's colour - either red, blue, green or yellow: "))
+      gameboard[0].player = playerColour
     
       index = 1
       for index in range(49):
             gameboard[index].player = "empty"
             index = index + 1
-      return gameboard
+      return gameboard, playerColour
 
 def displayBoard(gameboard):
     for row in range(len(gameboard)):
@@ -70,8 +71,7 @@ def AssignPointer(gameboard):
     return gameboard
 
 
-def MOVE(gameboard):
-    playerColour = gameboard[0].player
+def MOVE(gameboard, playerColour):
     SquaresToMove = random.randint(1,6)
     NewSquare = SquaresToMove
     while NewSquare < 50:
@@ -80,12 +80,15 @@ def MOVE(gameboard):
         gameboard[NewSquare].player ==  playerColour
         SquaresToMove = random.randint(1,6)
         NewSquare = NewSquare + SquaresToMove
+        print(NewSquare)
+        print(gameboard)
+        print()
     return gameboard
 
 #------------ Main Program -------------------------------------
 
-gameboard = InputPlayerColour(gameboard)
+gameboard, playerColour = InputPlayerColour(gameboard)
 gameboard = initPosition(gameboard)
 displayBoard(gameboard)
 gameboard = AssignPointer(gameboard)
-gameboard = MOVE(gameboard)
+gameboard = MOVE(gameboard, playerColour)
