@@ -35,6 +35,7 @@ def display_cards(cardarray):
         output = output + " : " + str(cardarray[index].value)
         print(output)
 
+#makes all values same as first card value :(
 def sort_cards(cardarray):
     for index in range(len(cardarray)):
         min = cardarray[0].value
