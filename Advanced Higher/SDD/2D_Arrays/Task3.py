@@ -18,9 +18,14 @@ for x in range(rows):
 			seats[x][y] = 'X'
 
 # TODO 2: display the grid neatly, one row per line
-for row in range(rows):
-	print(seats[row])
- 
+row = ''
+for x in range(rows):
+	row = ''
+	for y in range(cols):
+		row += str(seats[x][y]) + ' , '
+	row = row[:-2] 
+	print(row)
+
 # TODO 4: count and display the number of free seats
 counter = 0
 for x in range(rows):
