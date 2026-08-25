@@ -18,9 +18,9 @@ class winnerValues:
 	def setWinningLine(self, winningLine):
 		self.winningLine = winningLine
 	#getters
-	def getWinner(self, winner):
+	def getWinner(self):
 		return self.winner
-	def getWinningLine(self, winningLine):
+	def getWinningLine(self):
 		return self.winningLine
 
 winnerValuesArray = [winnerValues() for index in range(1)]
@@ -89,16 +89,16 @@ def checkDiagonals(winnerValuesArray):
 
 # TODO 4: report the result
 def displayResult(winnerValuesArray):
-	if winner != '':
-		print(winner, 'has won')
-		print('The win occured at',winningLine)
+	if winnerValuesArray[0].getWinner != '':
+		print(winnerValuesArray[0].getWinner(), 'has won')
+		print('The win occured at',winnerValuesArray[0].getWinningLine())
 	else:
 		print('No winner')
-	return winnerValuesArray
+	pass
 
 #------- Main Program -----------------------------------------------
 
 winnerValuesArray = checkRows(winnerValuesArray)
 winnerValuesArray = checkColumns(winnerValuesArray)
 winnerValuesArray = checkDiagonals(winnerValuesArray)
-winnerValuesArray = displayResult(winnerValuesArray)
+displayResult(winnerValuesArray)
