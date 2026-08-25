@@ -40,18 +40,23 @@ for rows in range(3):
 
 
 # TODO 3: check diagonals
+s = 0
+b = 1
 for diagonals in range(2):
-	s = 0
-	l = 1
 	currentDiagonal = []
 	for rows in range(3):
 		index = 0
 		for cols in range(3):
-			currentDiagonal.append(board[index][s:l])
+			currentDiagonal.append(board[index][s:b])
 			index = index + 1
 			#need to change s & l so that it does diagonals instead of columns
-			s = s + 1
-			l = l + 1
+			#hopefully that works when i fix the other stuff?
+			if diagonals == 0:
+				s = s + 1
+				b = b + 1
+			else:
+				s = s - 1
+				b = b - 1
 		if currentDiagonal[0] == currentDiagonal[1] == currentDiagonal[2]:
 			#there has to be a better solution but this works
 			#(previously printed: ['X'] has won when set winner to currentColumn[0])
