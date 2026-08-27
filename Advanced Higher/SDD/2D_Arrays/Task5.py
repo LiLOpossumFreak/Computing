@@ -38,8 +38,8 @@ userDetailsVariable = userDetails()
 # TODO 1: ask the user for their initials, and a row and column for their seat
 def getDetailsFromUser(userDetailsVariable):
 	userDetailsVariable.setInitals(input("Please input your initals: "))
-	userDetailsVariable.getRow(input("Please input your row: "))
-	userDetailsVariable.getColumn(input("Please input your column: "))
+	userDetailsVariable.setRow(input("Please input your row: "))
+	userDetailsVariable.setColumn(input("Please input your column: "))
 	return userDetailsVariable
 
 # TODO 2: check whether that row and column is free (equal to '')
