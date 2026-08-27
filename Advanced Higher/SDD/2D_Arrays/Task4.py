@@ -23,24 +23,24 @@ class winnerValues:
 	def getWinningLine(self):
 		return self.winningLine
 
-winnerValuesArray = [winnerValues() for index in range(1)]
+winnerValuesNotArray = winnerValues()
 
 #----------------- Subroutines ---------------------------------------------
  
 # TODO 1: check rows
-def checkRows(winnerValuesArray):
+def checkRows(winnerValuesNotArray):
 	for row in range(3):
 		if board[row] == ['X', 'X', 'X']:
-			winnerValuesArray[0].setWinner('X')
-			winnerValuesArray[0].setWinningLine('row ' + str(row))
+			winnerValuesNotArray.setWinner('X')
+			winnerValuesNotArray.setWinningLine('row ' + str(row + 1))
 		if board[row] == ['O', 'O', 'O']:
-			winnerValuesArray[0].setWinner('O')
-			winnerValuesArray[0].setWinningLine('row ' + str(row))
-	return winnerValuesArray
+			winnerValuesNotArray.setWinner('O')
+			winnerValuesNotArray.setWinningLine('row ' + str(row + 1))
+	return winnerValuesNotArray
 
 
 # TODO 2: check columns
-def checkColumns(winnerValuesArray):
+def checkColumns(winnerValuesNotArray):
 	s = 0
 	l = 1
 	for rows in range(3):
@@ -52,18 +52,18 @@ def checkColumns(winnerValuesArray):
 		s = s + 1
 		l = l + 1
 		if currentColumn[0] == currentColumn[1] == currentColumn[2]:
-			winnerValuesArray[0].setWinningLine('column ' + str(index-1))
+			winnerValuesNotArray.setWinningLine('column ' + str(index-1))
 			#there has to be a better solution but this works
 			#(previously printed: ['X'] has won when set winner to currentColumn[0])
 			if currentColumn[0] == ['X']:
-				winnerValuesArray[0].setWinner('X')
+				winnerValuesNotArray.setWinner('X')
 			else:
-				winnerValuesArray[0].setWinner('O')
-	return winnerValuesArray
+				winnerValuesNotArray.setWinner('O')
+	return winnerValuesNotArray
 
 
 # TODO 3: check diagonals
-def checkDiagonals(winnerValuesArray):
+def checkDiagonals(winnerValuesNotArray):
 	s = 0
 	b = 1
 	for diagonals in range(2):
@@ -80,25 +80,25 @@ def checkDiagonals(winnerValuesArray):
 			index = index + 1
 		if currentDiagonal[0] == currentDiagonal[1] == currentDiagonal[2]:
 			if currentDiagonal[0] == ['X']:
-				winnerValuesArray[0].setWinner('X')
-				winnerValuesArray[0].setWinningLine('a diagonal')
+				winnerValuesNotArray.setWinner('X')
+				winnerValuesNotArray.setWinningLine('a diagonal')
 			else:
-				winnerValuesArray[0].setWinner('O')
-	return winnerValuesArray
+				winnerValuesNotArray.setWinner('O')
+	return winnerValuesNotArray
 
 
 # TODO 4: report the result
-def displayResult(winnerValuesArray):
-	if winnerValuesArray[0].getWinner != '':
-		print(winnerValuesArray[0].getWinner(), 'has won')
-		print('The win occured at',winnerValuesArray[0].getWinningLine())
+def displayResult(winnerValuesNotArray):
+	if winnerValuesNotArray.getWinner != '':
+		print(winnerValuesNotArray.getWinner(), 'has won')
+		print('The win occured at',winnerValuesNotArray.getWinningLine())
 	else:
 		print('No winner')
 	pass
 
 #------- Main Program -----------------------------------------------
 
-winnerValuesArray = checkRows(winnerValuesArray)
-winnerValuesArray = checkColumns(winnerValuesArray)
-winnerValuesArray = checkDiagonals(winnerValuesArray)
-displayResult(winnerValuesArray)
+winnerValuesNotArray = checkRows(winnerValuesNotArray)
+winnerValuesNotArray = checkColumns(winnerValuesNotArray)
+winnerValuesNotArray = checkDiagonals(winnerValuesNotArray)
+displayResult(winnerValuesNotArray)
