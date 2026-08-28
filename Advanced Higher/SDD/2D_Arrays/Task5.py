@@ -43,7 +43,8 @@ def getDetailsFromUser(userDetailsVariable):
 	return userDetailsVariable
 
 # TODO 2: check whether that row and column is free (equal to '')
-
+def checkSeats():
+	pass
 
 # TODO 3: if it is free, store the initials at that row and column
 
@@ -53,3 +54,4 @@ def getDetailsFromUser(userDetailsVariable):
 #----------------- main program ----------------------------------
 
 userDetailsVariable = getDetailsFromUser(userDetailsVariable)
+userDetailsVariable = checkSeats(userDetailsVariable)
