@@ -38,13 +38,17 @@ userDetailsVariable = userDetails()
 # TODO 1: ask the user for their initials, and a row and column for their seat
 def getDetailsFromUser(userDetailsVariable):
 	userDetailsVariable.setInitals(input("Please input your initals: "))
-	userDetailsVariable.setRow(input("Please input your row: "))
-	userDetailsVariable.setColumn(input("Please input your column: "))
+	userDetailsVariable.setRow(int(input("Please input your row: ")))
+	userDetailsVariable.setColumn(int(input("Please input your column: ")))
 	return userDetailsVariable
 
 # TODO 2: check whether that row and column is free (equal to '')
-def checkSeats():
-	pass
+def checkSeats(userDetails, seat):
+	if seat[userDetails.getRow()][userDetails.getColumn()] == '':
+		print('that seat is free!!!!! yippeeeeeeeeeeeeee')
+	else:
+		print("that seat is NOT free!!!!!!! get gucced loser!!!!!!!!!!!!!!")
+	return userDetails
 
 # TODO 3: if it is free, store the initials at that row and column
 
@@ -54,4 +58,4 @@ def checkSeats():
 #----------------- main program ----------------------------------
 
 userDetailsVariable = getDetailsFromUser(userDetailsVariable)
-userDetailsVariable = checkSeats(userDetailsVariable)
+userDetailsVariable = checkSeats(userDetailsVariable, seat)
