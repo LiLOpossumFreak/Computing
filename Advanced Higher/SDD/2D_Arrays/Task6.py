@@ -23,6 +23,12 @@ def avgMarksPerStudent(marks, students):
 
 # TODO 2: average mark per test (per column)
 def avgMarksPerTest(marks, students):
+	average = 0
+	for student in range(len(marks[0])):
+		for index in range(len(students)):
+			average = average + marks[student][index]
+		average = round(average/len(students))
+		print('There was an average of '+average+' marks for this test')
 	pass
 
 # TODO 3: highest mark, student and test
@@ -36,6 +42,9 @@ def lowestMark(marks, students):
 #---------------- main program --------------------------------------------
 
 avgMarksPerStudent(marks, students)
+print()
 avgMarksPerTest(marks, students)
+print()
 highestMark(marks, students)
+print()
 lowestMark(marks, students)
