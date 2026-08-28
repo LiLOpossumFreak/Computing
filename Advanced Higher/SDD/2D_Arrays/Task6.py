@@ -26,9 +26,9 @@ def avgMarksPerTest(marks, students):
 	for student in range(len(marks[0])):
 		average = 0
 		for index in range(len(students)):
-			average = average + marks[student][index]
+			average = average + marks[index][student]
 		average = round(average/len(students))
-		print('There was an average of '+average+' marks for this test')
+		print('There was an average of '+str(average)+' marks for test '+str(student+1))
 	pass
 
 # TODO 3: highest mark, student and test
