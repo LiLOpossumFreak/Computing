@@ -48,14 +48,27 @@ def checkSeats(userDetails, seat):
 		print('that seat is free!!!!! yippeeeeeeeeeeeeee')
 	else:
 		print("that seat is NOT free!!!!!!! get gucced loser!!!!!!!!!!!!!!")
+		while seat[userDetails.getRow()][userDetails.getColumn()] != '':
+			userDetails = getDetailsFromUser(userDetails)
+			if seat[userDetails.getRow()][userDetails.getColumn()] == '':
+				print('that seat is free!!!!! yippeeeeeeeeeeeeee')
+			else:
+				print("that seat is NOT free!!!!!!! get gucced loser!!!!!!!!!!!!!!")
 	return userDetails
 
 # TODO 3: if it is free, store the initials at that row and column
-
+def storeInitalsInSeat(userDetails, seat):
+	seat[userDetails.getRow()][userDetails.getColumn()] = userDetails.getInitals()
+	return seat
 
 # TODO 4: if it is not free, display an error message and ask again for a row and column
+#okay so i did this in todo2 my bad
 
 #----------------- main program ----------------------------------
 
 userDetailsVariable = getDetailsFromUser(userDetailsVariable)
 userDetailsVariable = checkSeats(userDetailsVariable, seat)
+seat = storeInitalsInSeat(userDetailsVariable, seat)
+print()
+for row in range(2):
+    print(seat[row])
