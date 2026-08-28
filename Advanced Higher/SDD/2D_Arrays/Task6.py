@@ -39,12 +39,21 @@ def highestMark(marks, students):
 		for student in range(len(students)):
 			if marks[student][index] > highestMark:
 				highestMark = marks[student][index]
+				topStudent = students[student]
 	print(str(highestMark)+' was the highest mark and was earned by '+topStudent)
 	pass
 
 # TODO 4: lowest mark, student and test
 def lowestMark(marks, students):
-	pass
+	lowestMark = marks[0][0]
+	worstStudent = ''
+	for index in range(len(marks[0])):
+		for student in range(len(students)):
+			if marks[student][index] < lowestMark:
+				lowestMark = marks[student][index]
+				worstStudent = students[student]
+	print(str(lowestMark)+' was the lowest mark and was earned by '+worstStudent)
+pass
 
 #---------------- main program --------------------------------------------
 
