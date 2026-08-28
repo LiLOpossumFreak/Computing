@@ -13,8 +13,8 @@ print()
  
 # TODO 1: average mark per student
 def avgMarksPerStudent(marks, students):
-	average = 0
 	for student in range(len(students)):
+		average = 0
 		for index in range(len(marks[0])):
 			average = average + marks[student][index]
 		average = round(average/len(marks[0]))
@@ -23,8 +23,8 @@ def avgMarksPerStudent(marks, students):
 
 # TODO 2: average mark per test (per column)
 def avgMarksPerTest(marks, students):
-	average = 0
 	for student in range(len(marks[0])):
+		average = 0
 		for index in range(len(students)):
 			average = average + marks[student][index]
 		average = round(average/len(students))
