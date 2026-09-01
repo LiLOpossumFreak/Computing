@@ -1,6 +1,6 @@
 #---------------------- Subroutines ----------------------------------------------
 def initialise():
-    searchlist = [1,3,5,7,9,11,13,17,18,19]
+    searchlist = [10,15,25,26,60,90,100]
     print("Original list:",searchlist)
     return searchlist
 
@@ -13,7 +13,7 @@ def BinarySearch(searchlist,goal):
 
     print ("Endpos at beginning = ",endpos)
 
-
+    comparisonCount = 0
     while (startpos <= endpos) and found == False:
         middle = (startpos+endpos)//2 
         if searchlist[middle] == goal:
@@ -22,12 +22,21 @@ def BinarySearch(searchlist,goal):
             startpos = middle + 1
         else:
             endpos = middle -1
+        comparisonCount = comparisonCount + 1
 
-
+    print("There were "+str(comparisonCount)+" comparisons made.")
     if found == True:
-        print("Match has been found at position",middle)
+        return middle
     else:
-        print("Goal not found")
+        return -1
+
+
+def displayResults(foundPosition):
+    if foundPosition > 0:
+        print("Match has been found at position "+str(foundPosition))
+    else:
+        print("element not found.")
+    pass
 
 #---------------------- Main Program ----------------------------------------------
 
@@ -35,4 +44,5 @@ values = initialise()
 
 
 goal = int(input("Enter goal: "))
-BinarySearch(values,goal)
+foundPosition = BinarySearch(values,goal)
+displayResults(foundPosition)
