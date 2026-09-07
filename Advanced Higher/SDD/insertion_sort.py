@@ -1,5 +1,5 @@
 myList = [3,4,9,7,1]
-
+swaps = 0
 
 for index in range (1,len(myList)):
 #store the value to be inserted into the array
@@ -13,6 +13,8 @@ for index in range (1,len(myList)):
 
  #insert the value into the array
     myList[position] = currentvalue
+    swaps =  swaps + 1
 
 
 print(myList)
+print(swaps)
