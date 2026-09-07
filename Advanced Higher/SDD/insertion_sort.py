@@ -13,6 +13,7 @@ for index in range (1,len(myList)):
 
  #insert the value into the array
     myList[position] = currentvalue
+    
     swaps =  swaps + 1
 
 
