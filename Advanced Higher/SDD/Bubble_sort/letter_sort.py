@@ -1,7 +1,7 @@
-myList = ['G','X','b','P','z']
+myList = ['p','o','r','t','y']
 swaps = 0
 
-#Sorts into ascending order
+#Sorts into ascending order (according to ASCII value)
 #start from the right
 for outer in range (len(myList)-1,0,-1):
   for inner in range(outer):
