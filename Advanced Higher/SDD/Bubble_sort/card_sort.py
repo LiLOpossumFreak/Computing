@@ -7,8 +7,8 @@ for outer in range (len(myList)-1,0,-1):
   for inner in range(outer):
     #checks whether starting character is a number or letter
     if ord(myList[inner][0:1]) > 58:
-      #do some stuff ig?
-      print()
+      print('hello world')
+  
     else: 
       #compare two adjacent integer values
       if int(myList[inner][0:1]) > int(myList[inner+1][0:1]):
