@@ -16,13 +16,13 @@ def BinarySearch(searchlist,goal):
     comparisonCount = 0
     while (startpos <= endpos) and found == False:
         middle = (startpos+endpos)//2 
+        comparisonCount = comparisonCount + 1
         if searchlist[middle] == goal:
             found = True
         elif searchlist[middle]<goal:
             startpos = middle + 1
         else:
             endpos = middle -1
-        comparisonCount = comparisonCount + 1
 
     print("There were "+str(comparisonCount)+" comparisons made.")
     if found == True:
