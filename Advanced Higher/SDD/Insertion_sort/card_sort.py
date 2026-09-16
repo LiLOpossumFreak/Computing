@@ -1,6 +1,7 @@
 myList = ['4_ofClubs','Q_ofSpades','3_ofDiamonds','7_ofSpades','A_ofClubs']
 swaps = 0
 
+
 # sanitise data
 for x in range(len(myList)):
   if ord(myList[x][0:1]) > 40:
@@ -14,20 +15,23 @@ for x in range(len(myList)):
         elif myList[x][0:1] == 'K':
           myList[x] = '12_' + myList[x][2:]
 
-#Sorts into ascending order
-#start from the right
-for outer in range (len(myList)-1,0,-1):
-  for inner in range(outer):  
-    #compare two adjacent integer values
-    if int(myList[inner][0:2].rstrip('_')) > int(myList[inner+1][0:2].rstrip('_')):
-      #assign one of the values to a temp variable
-      temp = myList[inner]
-      #overwrite one of the values
-      myList[inner] = myList[inner+1]
-      #replace with the temp value
-      myList[inner+1] = temp
-      swaps = swaps + 1
 
-print("Bubble sort complete")
+#sorts into descending order
+for index in range (1,len(myList)):
+#store the value to be inserted into the array
+    currentvalue = int(myList[index][0:2].rstrip('_'))
+    position = index
+
+  #shift the rest of the array one to the right
+    while int(myList[position][0:2].rstrip('_')) > 0 and int(myList[position-1][0:2].rstrip('_')) > currentvalue:
+        myList[position] = myList[position-1]
+        position -= 1
+
+ #insert the value into the array
+    myList[position] = currentvalue
+    
+    swaps =  swaps + 1
+
+
 print(myList)
-print("There were "+str(swaps)+" swaps")
+print('There were '+swaps+' swaps')
