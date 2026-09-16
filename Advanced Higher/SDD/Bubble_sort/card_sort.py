@@ -4,7 +4,6 @@ swaps = 0
 # sanitise data
 for x in range(len(myList)):
   if ord(myList[x][0:1]) > 40:
-        valueHold = myList[x]
         #this is probably super inefficient but idk how to do it better and this is already late :(
         if myList[x][0:1] == 'A':
             myList[x] = '0_' + myList[x][2:]
@@ -26,10 +25,7 @@ for outer in range (len(myList)-1,0,-1):
       #overwrite one of the values
       myList[inner] = myList[inner+1]
       #replace with the temp value
-      if len(myList[inner+1]) > 2:
-        myList[inner+1] = temp
-      else:
-        myList[inner+1] = valueHold
+      myList[inner+1] = temp
       swaps = swaps + 1
 
 print("Bubble sort complete")
