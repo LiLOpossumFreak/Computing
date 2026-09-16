@@ -1,23 +1,24 @@
 myList = ['4_ofClubs','Q_ofSpades','3_ofDiamonds','7_ofSpades','A_ofClubs']
 swaps = 0
 
+# sanitise data
+for x in range(len(myList)):
+  if ord(myList[x][0:1]) > 40:
+        valueHold = myList[x]
+        #this is probably super inefficient but idk how to do it better and this is already late :(
+        if myList[x][0:1] == 'A':
+            myList[x] = '0_' + myList[x][2:]
+        elif myList[x][0:1] == 'J':
+          myList[x] = '10_' + myList[x][2:]
+        elif myList[x][0:1] == 'Q':
+          myList[x] = '11_' + myList[x][2:]
+        elif myList[x][0:1] == 'K':
+          myList[x] = '12_' + myList[x][2:]
+
 #Sorts into ascending order
 #start from the right
 for outer in range (len(myList)-1,0,-1):
-  for inner in range(outer):
-    #checks whether starting character is a number or letter
-    if ord(myList[inner+1][0:1]) > 40:
-      valueHold = myList[inner+1]
-      #this is probably super inefficient but idk how to do it better and this is already late :(
-      if myList[inner+1][0:1] == 'A':
-          myList[inner+1] = '0_'
-      elif myList[inner+1][0:1] == 'J':
-        myList[inner+1] = '10_'
-      elif myList[inner+1][0:1] == 'Q':
-        myList[inner+1] = '11_'
-      elif myList[inner+1][0:1] == 'K':
-        myList[inner+1] = '12_'
-  
+  for inner in range(outer):  
     #compare two adjacent integer values
     if int(myList[inner][0:2].rstrip('_')) > int(myList[inner+1][0:2].rstrip('_')):
       #assign one of the values to a temp variable
