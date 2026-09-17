@@ -13,7 +13,6 @@ def BinarySearch(searchlist,goal):
 
     print ("Endpos at beginning = ",endpos)
 
-# will not find element in position 0 for some reason :(
     comparisonCount = 0
     while (startpos <= endpos) and found == False:
         middle = (startpos+endpos)//2
