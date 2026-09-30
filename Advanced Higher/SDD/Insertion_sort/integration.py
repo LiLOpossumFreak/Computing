@@ -1,4 +1,4 @@
-#connect to database please ?
+#cannot work on github, must be done locally (ie vscode)
 import mysql.connector  # type: ignore[import-not-found]
 
 con = mysql.connector.connect(user='root', password='', host='127.0.0.1', database='sloco')
