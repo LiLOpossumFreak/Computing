@@ -32,7 +32,7 @@ main {
 }
 
 /* Media query for small screens */
-media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body {
     font-size: 18px; /* Make text larger for smaller screens */
   }
@@ -48,6 +48,6 @@ media screen and (max-width: 768px) {
 /* Media query for changing header color */
 @media screen and (max-width: 480px) {
   header {
-    backgroun-color: #555;
+    background-color: #555;
   }
 }
