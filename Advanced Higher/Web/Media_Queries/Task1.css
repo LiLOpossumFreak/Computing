@@ -1,0 +1,41 @@
+#Desktop
+@media screen and (max-width: 992px) {
+    .Desktop {
+        display: block;
+    }
+    .Mobile {
+        display: none;
+    }
+    .Tablet {
+        display: none;
+    }
+}
+
+
+#Mobile
+@media screen and (max-width: 992px) {
+    .Desktop {
+        display: none;
+    }
+    .Mobile {
+        display: block;
+    }
+    .Tablet {
+        display: none;
+    }
+}
+
+
+
+#Tablet
+@media screen and (max-width: 992px) {
+    .Desktop {
+        display: none;
+    }
+    .Mobile {
+        display: none;
+    }
+    .Tablet {
+        display: block;
+    }
+}
