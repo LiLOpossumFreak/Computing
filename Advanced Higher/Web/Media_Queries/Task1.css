@@ -1,3 +1,4 @@
+/* Desktop */
 @media screen and (max-width: 2560px) {
     .Desktop {
         display: block;
@@ -11,6 +12,7 @@
 }
 
 
+/* Mobile */
 @media screen and (max-width: 500px) {
     .Desktop {
         display: none;
@@ -25,6 +27,7 @@
 
 
 
+/* Tablet */
 @media screen and (max-width: 992px) {
     .Desktop {
         display: none;
